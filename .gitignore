@@ -1,0 +1,8 @@
+*~
+*.elc
+elpa/
+eshell/
+server/
+auto-save-list/
+tutorial/
+
