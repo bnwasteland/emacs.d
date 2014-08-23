@@ -21,6 +21,7 @@
 		  'powerline
 		  'evil-paredit
 		  'powerline-evil
+		  'rainbow-delimiters
 		  'clojure-mode
 		  'cider
 		  'coffee-mode)
@@ -29,5 +30,8 @@
 (require 'my-evil)
 (require 'my-paredit)
 (require 'my-powerline)
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (provide 'my-packages)

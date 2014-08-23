@@ -37,6 +37,16 @@
  '(powerline-evil-motion-face ((t (:inherit powerline-evil-base-face :background "magenta" :foreground "gray22"))))
  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "green" :foreground "gray22"))))
  '(powerline-evil-operator-face ((t (:inherit powerline-evil-operator-face :background "cyan" :foreground "gray22"))))
- '(powerline-evil-visual-face ((t (:inherit powerline-evil-base-face :background "orange" :foreground "gray22")))))
+ '(powerline-evil-visual-face ((t (:inherit powerline-evil-base-face :background "orange" :foreground "gray22"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "dark gray"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "light blue"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "royal blue"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "yellow3"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "forest green"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "DarkOrange3"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "slate blue"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "red3"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "snow3"))))
+ '(rainbow-delimiters-unmatched-face ((t (:foreground "white")))))
 
 
