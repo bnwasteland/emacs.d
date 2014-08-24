@@ -5,6 +5,10 @@
 (require 'my-gui)
 (require 'my-shell)
 
+;; put emacs droppings togther
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+
 (require 'my-packages)
 
 (custom-set-variables
