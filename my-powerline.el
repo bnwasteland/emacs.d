@@ -7,12 +7,14 @@
 	 (stripped (when orig (replace-regexp-in-string "\\`[ \t\n]*Git." "" orig))))
     (when stripped (concat "(" stripped ")"))))
 
+(defvar my-invisible-minor-modes
+  '("Undo-Tree"
+    "MRev"))
+
 (defun my-powerline-minor-modes (face &optional padding)
-  (let ((invisible-minor-modes '("Undo-Tree"
-				 "MRev")))
-    (replace-regexp-in-string (concat " " (mapconcat 'identity invisible-minor-modes "\\|"))
-			      ""
-			      (powerline-minor-modes face padding))))
+  (replace-regexp-in-string (concat " " (mapconcat 'identity my-invisible-minor-modes "\\| "))
+			    ""
+			    (powerline-minor-modes face padding)))
 
 (defface my-powerline-modified-buffer
   '((t :inherit mode-line :background "OrangeRed3"))
