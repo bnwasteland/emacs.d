@@ -8,7 +8,8 @@
     (when stripped (concat "(" stripped ")"))))
 
 (defun my-powerline-minor-modes (face &optional padding)
-  (let ((invisible-minor-modes '("Undo-Tree")))
+  (let ((invisible-minor-modes '("Undo-Tree"
+				 "MRev")))
     (replace-regexp-in-string (concat " " (mapconcat 'identity invisible-minor-modes "\\|"))
 			      ""
 			      (powerline-minor-modes face padding))))
