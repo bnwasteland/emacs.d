@@ -4,8 +4,8 @@
 
 (defun my-powerline-vc ()
   (let* ((orig (powerline-vc))
-	 (stripped (when orig (replace-regexp-in-string "\\`[ \t\n]*Git." "" orig))))
-    (when stripped (concat "(" stripped ")"))))
+	 (stripped (when orig (replace-regexp-in-string "\\`[ \t\n]*Git" "" orig))))
+    stripped))
 
 (defvar my-invisible-minor-modes
   '("Undo-Tree"
@@ -48,15 +48,13 @@
 	'my-powerline-unmodified-buffer)
     'my-powerline-transient-buffer))
 
-(defun my-git-dirty-p ()
+(defun my-git-dirty-p (vc-string)
   "Return t if local repository is dirty."
-  (with-temp-buffer
-    (vc-git-command t 0 nil "status" "--porcelain")
-    (> (buffer-size) 0)))
+  (string-prefix-p "-" vc-string))
 
-(defun my-powerline-vc-face ()
+(defun my-powerline-vc-face (vc-string)
   (if (eq (vc-backend (buffer-file-name)) 'Git)
-      (if (my-git-dirty-p)
+      (if (my-git-dirty-p vc-string)
 	  'my-powerline-dirty-vc-face
 	  'my-powerline-clean-vc-face)
       'mode-line))
@@ -72,7 +70,7 @@
 			  (evil-face (if active (powerline-evil-face) 'mode-line-inactive))
 			  (buffer-face (if active (my-powerline-buffer-face) 'mode-line-inactive))
 			  (mode-line (if active 'mode-line 'mode-line-inactive))
-			  (vc-face (if active (my-powerline-vc-face) 'mode-line-inactive))
+			  (vc-face (if active 'mode-line 'mode-line-inactive))
 			  (face1 (if active 'powerline-active1 'powerline-inactive1))
 			  (face2 (if active 'powerline-active2 'powerline-inactive2))
 			  (separator-left (intern (format "powerline-%s-%s"
