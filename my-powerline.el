@@ -9,6 +9,7 @@
 
 (defvar my-invisible-minor-modes
   '("Undo-Tree"
+    "ws"
     "MRev"))
 
 (defun my-powerline-minor-modes (face &optional padding)
@@ -31,33 +32,12 @@
   "Face used to when buffer is not visiting a file"
   :group 'powerline)
 
-(defface my-powerline-clean-vc-face
-  '((t :inherit mode-line :foreground "light green"))
-  "Face used to when working repo is clean"
-  :group 'powerline)
-
-(defface my-powerline-dirty-vc-face
-  '((t :inherit mode-line :foreground "DarkOrange1"))
-  "Face used to when working repo is dirty"
-  :group 'powerline)
-
 (defun my-powerline-buffer-face ()
   (if (buffer-file-name)
       (if (buffer-modified-p)
 	  'my-powerline-modified-buffer
 	'my-powerline-unmodified-buffer)
     'my-powerline-transient-buffer))
-
-(defun my-git-dirty-p (vc-string)
-  "Return t if local repository is dirty."
-  (string-prefix-p "-" vc-string))
-
-(defun my-powerline-vc-face (vc-string)
-  (if (eq (vc-backend (buffer-file-name)) 'Git)
-      (if (my-git-dirty-p vc-string)
-	  'my-powerline-dirty-vc-face
-	  'my-powerline-clean-vc-face)
-      'mode-line))
 
 (defun my-powerline-theme ()
   "Setup my default mode-line."

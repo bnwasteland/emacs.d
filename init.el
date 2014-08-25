@@ -9,6 +9,8 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
+(electric-indent-mode 1)
+
 (require 'my-packages)
 
 (custom-set-variables
@@ -17,6 +19,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
+ '(coffee-tab-width 2)
  '(custom-enabled-themes (quote (wombat)))
  '(display-time-default-load-average nil)
  '(display-time-mode t)
@@ -52,5 +55,3 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "red3"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "snow3"))))
  '(rainbow-delimiters-unmatched-face ((t (:foreground "white")))))
-
-
