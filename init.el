@@ -1,4 +1,10 @@
-(add-to-list 'load-path user-emacs-directory)
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (require 'my-text)
 (require 'my-keys)
@@ -26,6 +32,27 @@
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (coffee-mode
+     cider
+     clojure-mode
+     rainbow-delimiters
+     powerline-evil
+     evil-paredit
+     powerline
+     paredit
+     evil
+     magit
+     git-commit
+     magit-popup
+     undo-tree
+     goto-chg
+     pkg-info
+     queue
+     spinner
+     epl
+     package+)))
  '(powerline-evil-tag-style (quote verbose))
  '(scroll-bar-mode nil)
  '(show-trailing-whitespace t)

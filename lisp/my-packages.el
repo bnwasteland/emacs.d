@@ -1,20 +1,20 @@
 (require 'package)
-(package-initialize)
-
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	     '("melpa" . "http://melpa.org/packages/") t)
+
+(package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(unless (package-installed-p 'package-filter)
-  (package-install 'package-filter))
+;(unless (package-installed-p 'package-filter)
+;  (package-install 'package-filter))
 
 (unless (package-installed-p 'package+)
   (package-install 'package+))
 
 (package-manifest 'magit
-		  'package-filter
+		  ;'package-filter
 		  'package+
 		  'evil
 		  'paredit
